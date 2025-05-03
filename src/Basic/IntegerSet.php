@@ -13,12 +13,12 @@ use Exception;
  * (hence no negative numbers are allowed). Anything else is evaluated as an integer.
  * Exceptions are only thrown when trying to insert negative numbers.
  */
-class IntegerSet implements Iterator
+class IntegerSet implements Iterator, \Stringable
 {
     /**
      * @var array Container for all items of the set.
      **/
-    private $items = array();
+    private $items = [];
 
     public function __construct($setString = null)
     {
@@ -30,9 +30,9 @@ class IntegerSet implements Iterator
      * @param $setString
      * @throws Exception
      */
-    public function load($setString)
+    public function load($setString): void
     {
-        $this->items = array();
+        $this->items = [];
 
         if (is_null($setString)) {
             return;
@@ -54,14 +54,14 @@ class IntegerSet implements Iterator
     }
 
     /**
-     * @return array All items in the set
+     * @return array<mixed> All items in the set
      */
-    public function getItems()
+    public function getItems(): array
     {
         return array_values($this->items);
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         $result = '';
         $prev = null;
@@ -93,7 +93,7 @@ class IntegerSet implements Iterator
     /**
      * Number of elements
      */
-    public function count()
+    public function count(): int
     {
         return count($this->items);
     }
@@ -103,7 +103,7 @@ class IntegerSet implements Iterator
      * @param int $num
      * @throws Exception when trying to insert negative numbers.
      */
-    public function insert($num)
+    public function insert($num): void
     {
         $num = (int) $num;
         if ($num < 0) {
@@ -121,7 +121,7 @@ class IntegerSet implements Iterator
      * @param int $to
      * @throws Exception when trying to insert negative numbers.
      */
-    public function insertRange($from, $to)
+    public function insertRange($from, $to): void
     {
         $from = (int) $from;
         $to = (int) $to;
@@ -136,7 +136,7 @@ class IntegerSet implements Iterator
      * Remove a number
      * @param int $num
      */
-    public function remove($num)
+    public function remove($num): void
     {
         $num = (int) $num;
         if (($pos = array_search($num, $this->items)) !== false) {
@@ -149,7 +149,7 @@ class IntegerSet implements Iterator
      * @param int $from
      * @param int $to
      */
-    public function removeRange($from, $to)
+    public function removeRange($from, $to): void
     {
         $from = (int) $from;
         $to = (int) $to;
@@ -164,39 +164,39 @@ class IntegerSet implements Iterator
      * @param int $element
      * @return bool TRUE if in set
      */
-    public function contains($element)
+    public function contains($element): bool
     {
         return in_array($element, $this->items);
     }
 
     // Iteration interface
-    public function current()
+    public function current(): mixed
     {
         return current($this->items);
     }
 
-    public function key()
+    public function key(): mixed
     {
         return key($this->items);
     }
 
-    public function next()
+    public function next(): void
     {
-        return next($this->items);
+        next($this->items);
     }
 
-    public function valid()
+    public function valid(): bool
     {
         $key = key($this->items);
         return ($key !== null && $key !== false);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
-        return reset($this->items);
+        reset($this->items);
     }
 
-    public function last()
+    public function last(): mixed
     {
         return end($this->items);
     }

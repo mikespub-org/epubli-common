@@ -26,20 +26,20 @@ use Epubli\Common\Basic\Enum;
  */
 class InternetMediaType extends Enum
 {
-    const EPUB = 'application/epub+zip';
-    const JSON = 'application/json';
-    const PDF = 'application/pdf';
-    const XHTML = 'application/xhtml+xml';
+    public const EPUB = 'application/epub+zip';
+    public const JSON = 'application/json';
+    public const PDF = 'application/pdf';
+    public const XHTML = 'application/xhtml+xml';
 
-    const GIF = 'image/gif';
-    const JPEG = 'image/jpeg';
-    const PNG = 'image/png';
+    public const GIF = 'image/gif';
+    public const JPEG = 'image/jpeg';
+    public const PNG = 'image/png';
 
-    const CSS = 'text/css';
-    const HTML = 'text/html';
-    const MD = 'text/markdown';
-    const TXT = 'text/plain';
+    public const CSS = 'text/css';
+    public const HTML = 'text/html';
+    public const MD = 'text/markdown';
+    public const TXT = 'text/plain';
 
     // Unregistered types (x prefix)
-    const NCX = 'application/x-dtbncx+xml';
+    public const NCX = 'application/x-dtbncx+xml';
 }

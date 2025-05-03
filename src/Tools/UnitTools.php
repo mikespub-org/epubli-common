@@ -9,8 +9,8 @@ namespace Epubli\Common\Tools;
  */
 class UnitTools
 {
-    const MM_PER_INCH = 25.4;
-    const PT_PER_INCH = 72;
+    public const MM_PER_INCH = 25.4;
+    public const PT_PER_INCH = 72;
 
     /**
      * Convert millimeters to DTP points.
@@ -45,7 +45,7 @@ class UnitTools
         $dimensions = [
             "factor" => [60, 60, 60, 24, 7, 4],
             "short" => ["s", "m", "h", "d", "w", "m"],
-            "long" => ["Seconds", "Minutes", "Hours", "Days", "Weeks", "Months"]
+            "long" => ["Seconds", "Minutes", "Hours", "Days", "Weeks", "Months"],
         ];
         $dim = 0;
         $buf = $value;
@@ -69,7 +69,7 @@ class UnitTools
     {
         $dimensions = [
             "short" => ["B", "KB", "MB", "GB", "TB", "PB"],
-            "long" => ["Bytes", "Kilobyte", "Megabyte", "Gigabyte", "Terabyte", "Pentabyte"]
+            "long" => ["Bytes", "Kilobyte", "Megabyte", "Gigabyte", "Terabyte", "Pentabyte"],
         ];
         $factor = 1024;
         $dim = 0;

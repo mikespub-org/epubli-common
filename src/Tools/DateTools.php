@@ -21,10 +21,10 @@ class DateTools
         'September' => 'September',
         'October' => 'Oktober',
         'November' => 'November',
-        'December' => 'Dezember'
+        'December' => 'Dezember',
     ];
 
-    private static $weekdays = array(
+    private static $weekdays = [
         'Monday' => 'Montag',
         'Tuesday' => 'Dienstag',
         'Wednesday' => 'Mittwoch',
@@ -32,7 +32,7 @@ class DateTools
         'Friday' => 'Freitag',
         'Saturday' => 'Samstag',
         'Sunday' => 'Sonntag',
-    );
+    ];
 
     /**
      * @param $date
@@ -43,7 +43,7 @@ class DateTools
         if ($date instanceof \DateTime) {
             return true;
         } elseif (is_string($date)) {
-            preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/is', $date, $m);
+            preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/is', (string) $date, $m);
             return !empty($m);
         }
         return false;
@@ -62,9 +62,9 @@ class DateTools
          */
         $dateInterval = null;
         if ($interval) {
-            $invert = $interval{0} == '-';
+            $invert = $interval[0] == '-';
             $interval = str_replace(['+', '-'], '', $interval);
-            $dateInterval = new \DateInterval('P' . strtoupper($interval));
+            $dateInterval = new \DateInterval('P' . strtoupper((string) $interval));
             if ($invert) {
                 $dateInterval->invert = 1;
             }
@@ -98,9 +98,9 @@ class DateTools
         } elseif ($period instanceof \DateTime) {
             return $period;
         } elseif (isset($period) && $period) {
-            $codeInterval = 'P' . str_replace(['+', '-'], '', strtoupper($period));
+            $codeInterval = 'P' . str_replace(['+', '-'], '', strtoupper((string) $period));
             $interval = new \DateInterval($codeInterval);
-            if ($period{0} == "-") {
+            if ($period[0] == "-") {
                 $date->sub($interval);
             } else {
                 $date->add($interval);
@@ -120,11 +120,11 @@ class DateTools
     public static function translateMonthsWeekdaysToGerman($string)
     {
         return str_replace(
-            array_map([__CLASS__, 'to3Chars'], array_keys(self::$weekdays)),
-            array_map([__CLASS__, 'to3Chars'], self::$weekdays),
+            array_map(self::to3Chars(...), array_keys(self::$weekdays)),
+            array_map(self::to3Chars(...), self::$weekdays),
             str_replace(
-                array_map([__CLASS__, 'to3Chars'], array_keys(self::$months)),
-                array_map([__CLASS__, 'to3Chars'], self::$months),
+                array_map(self::to3Chars(...), array_keys(self::$months)),
+                array_map(self::to3Chars(...), self::$months),
                 str_replace(
                     array_keys(self::$months),
                     self::$months,
@@ -147,6 +147,6 @@ class DateTools
      */
     private static function to3Chars($str)
     {
-        return substr($str, 0, 3);
+        return substr((string) $str, 0, 3);
     }
 }

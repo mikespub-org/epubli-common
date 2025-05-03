@@ -11,15 +11,15 @@ class StringToolsTest extends TestCase
      * @param string $replace The replacement string.
      * @param string $subject The original string.
      * @param string $expected The expected result.
-     * @dataProvider provideReplaceFirstOccurrenceData
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideReplaceFirstOccurrenceData')]
     public function testReplaceFirstOccurrence($search, $replace, $subject, $expected)
     {
         $result = StringTools::replaceFirstOccurrence($search, $replace, $subject);
         $this->assertEquals($expected, $result);
     }
 
-    public function provideReplaceFirstOccurrenceData()
+    public static function provideReplaceFirstOccurrenceData()
     {
         return [
             ['needle', 'camel', 'Haystack containing a needle.', 'Haystack containing a camel.'],

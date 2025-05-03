@@ -35,13 +35,13 @@ class HtmlTools
             if (is_string($length)) {
                 $length = trim($length);
                 /* interpret percentage value */
-                if (substr($length,-1)=='%') {
-                    $length = strlen($htmlString)*substr($length,0,-1)/100;
+                if (str_ends_with($length, '%')) {
+                    $length = strlen((string) $htmlString) * substr($length, 0, -1) / 100;
                 }
             }
-            $htmlString = substr($htmlString, 0, $length);
+            $htmlString = substr((string) $htmlString, 0, $length);
             /* eliminate trailing truncated tag fragment if present */
-            $htmlString = preg_replace('/<[^>]*$/is','',$htmlString);
+            $htmlString = preg_replace('/<[^>]*$/is', '', $htmlString);
         }
 
         return is_array($html) ? $htmls : array_pop($htmls);
@@ -62,19 +62,18 @@ class HtmlTools
         ['title', 'br', 'p', 'h1','h2','h3','h4','h5','span','div','i','strong','b', 'table', 'td', 'th', 'tr'],
         $drop =
         ['head','style']
-    )
-    {
+    ) {
         $htmls = is_array($html) ? $html : [$html];
         foreach ($htmls as &$htmlString) {
             foreach ($drop as $dumpTag) {
-                $htmlString = preg_replace("/<$dumpTag.*$dumpTag>/is", "\n", $htmlString);
+                $htmlString = preg_replace("/<$dumpTag.*$dumpTag>/is", "\n", (string) $htmlString);
             }
-            $htmlString = preg_replace("/[\n\r ]{2,}/i", "\n", $htmlString);
-            $htmlString = preg_replace("/[\n|\r]/i", '<br />', $htmlString);
+            $htmlString = preg_replace("/[\n\r ]{2,}/i", "\n", (string) $htmlString);
+            $htmlString = preg_replace("/[\n|\r]/i", '<br />', (string) $htmlString);
 
             /* @TODO: remove style tags and only keep body content (drop head) */
             $tempFunc = function ($matches) use ($keep) {
-                $htmlNode = "<" . $matches[1] . ">" . strip_tags($matches[2]) . "</" . $matches[1] . ">";
+                $htmlNode = "<" . $matches[1] . ">" . strip_tags((string) $matches[2]) . "</" . $matches[1] . ">";
                 if (in_array($matches[1], $keep)) {
                     return " " . $htmlNode . " ";
                 } else {
@@ -82,11 +81,11 @@ class HtmlTools
                 }
             };
 
-            $allowedTags = implode(array_values($keep), "|");
+            $allowedTags = implode("|", array_values($keep));
             $regExp = '@<(' . $allowedTags . ')[^>]*?>(.*?)<\/\1>@i';
-            $htmlString = preg_replace_callback($regExp, $tempFunc, $htmlString);
+            $htmlString = preg_replace_callback($regExp, $tempFunc, (string) $htmlString);
 
-            $htmlString = strip_tags($htmlString, "<" . implode("><", $keep) . ">");
+            $htmlString = strip_tags((string) $htmlString, "<" . implode("><", $keep) . ">");
         }
         /* preserve injected variable cast type (string|array) when returning processed entity */
         return is_array($html) ? $htmls : array_pop($htmls);

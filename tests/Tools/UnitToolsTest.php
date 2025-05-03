@@ -6,27 +6,30 @@ use PHPUnit\Framework\TestCase;
 
 class UnitToolsTest extends TestCase
 {
+    protected float $epsilon = 0.00001;
+
     /**
      * @param float $mm value in mm
      * @param float $pt value in pt
-     * @dataProvider provideData
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideData')]
     public function testMmToPt($mm, $pt)
     {
-        $this->assertEquals($pt, UnitTools::mmToPt($mm), '', 0.00001);
+        $this->assertEqualsWithDelta($pt, UnitTools::mmToPt($mm), $this->epsilon, '');
     }
 
     /**
      * @param float $mm value in mm
      * @param float $pt value in pt
-     * @dataProvider provideData
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideData')]
     public function testPtToMm($mm, $pt)
     {
-        $this->assertEquals($mm, UnitTools::ptToMm($pt), '', 0.00001);
+        $this->assertEqualsWithDelta($mm, UnitTools::ptToMm($pt), $this->epsilon, '');
     }
 
-    public function provideData() {
+    public static function provideData()
+    {
         return [
             [3, 8.503937],
             [1.058333, 3],

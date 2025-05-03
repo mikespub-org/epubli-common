@@ -1,4 +1,5 @@
 <?php
+
 /**
  * List of HTML block level elements.
  * Source: https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
@@ -38,5 +39,5 @@ return [
     'table',
     'tfoot',
     'ul',
-    'video'
+    'video',
 ];

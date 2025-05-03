@@ -12,9 +12,10 @@ class FileTools
      * @return bool
      * @throws \Exception
      */
-    public static function mkdirRecursive($dir, $mode = 0777) {
+    public static function mkdirRecursive($dir, $mode = 0o777)
+    {
         $permissionErrorHandler = function ($error = 0, $text = null, $file = null, $line = null) use ($dir, $mode) {
-            if ($error instanceof \Exception ) {
+            if ($error instanceof \Exception) {
                 throw $error;
             } else {
                 throw new \Exception($text ?: "ERROR while creating directory [$dir] with mode $mode.", $error);
@@ -23,7 +24,7 @@ class FileTools
         set_error_handler($permissionErrorHandler, ~E_NOTICE & ~E_WARNING);
 
         /* get all path nodes for target folder */
-        $dir_nodes = explode(DIRECTORY_SEPARATOR, $dir);
+        $dir_nodes = explode(DIRECTORY_SEPARATOR, (string) $dir);
 
         clearstatcache();
         if (!is_dir($dir)) {
@@ -33,7 +34,7 @@ class FileTools
                 if (!is_dir($basedir)) {
                     $result = mkdir($basedir, $mode);
                     if (!$result) {
-                        $permissionErrorHandler(0,"ERROR while creating directory [$basedir] with mode $mode: mkdir() returned false.");
+                        $permissionErrorHandler(0, "ERROR while creating directory [$basedir] with mode $mode: mkdir() returned false.");
                     }
                 }
             }

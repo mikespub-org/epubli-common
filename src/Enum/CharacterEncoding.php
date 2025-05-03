@@ -19,11 +19,11 @@ use Epubli\Common\Basic\Enum;
  */
 class CharacterEncoding extends Enum
 {
-    const ASCII = 'ASCII';
-    const LATIN1 = 'ISO 8859-1';
-    const UTF8 = 'UTF-8';
-    const UTF16LE = 'UTF-16 LE';
-    const UTF16BE = 'UTF-16 BE';
-    const UTF32LE = 'UTF-32 LE';
-    const UTF32BE = 'UTF-32 BE';
+    public const ASCII = 'ASCII';
+    public const LATIN1 = 'ISO 8859-1';
+    public const UTF8 = 'UTF-8';
+    public const UTF16LE = 'UTF-16 LE';
+    public const UTF16BE = 'UTF-16 BE';
+    public const UTF32LE = 'UTF-32 LE';
+    public const UTF32BE = 'UTF-32 BE';
 }

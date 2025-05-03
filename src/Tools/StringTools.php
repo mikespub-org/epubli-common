@@ -30,10 +30,10 @@ class StringTools
                 }
             }
 
-            return (isset($buf[$seg]) ? $buf[$seg] : "");
+            return ($buf[$seg] ?? "");
         };
         $pattern = '/' . $prefix . '([0-9a-zA-Z_\[\.\]]*)' . $suffix . '/is';
-        preg_match_all($pattern, $text, $matches);
+        preg_match_all($pattern, (string) $text, $matches);
         arsort($matches[0]);
         foreach ($matches[1] as &$match) {
             $split = preg_split('/[\]\[\.]+/is', $match);
@@ -69,7 +69,7 @@ class StringTools
      */
     public static function stripNonAsciiChars($text)
     {
-        return preg_replace('/[[:^print:]]/', '_', $text);
+        return preg_replace('/[[:^print:]]/', '_', (string) $text);
     }
 
     /**
@@ -80,7 +80,7 @@ class StringTools
      */
     public static function startsWith($haystack, $needle)
     {
-        return '' === $needle || strpos($haystack, $needle) === 0;
+        return '' === $needle || str_starts_with($haystack, $needle);
     }
 
     /**
@@ -102,7 +102,7 @@ class StringTools
      */
     public static function contains($haystack, $needle)
     {
-        return '' === $needle || strpos($haystack, $needle) !== false;
+        return '' === $needle || str_contains($haystack, $needle);
     }
 
     /**
@@ -130,7 +130,7 @@ class StringTools
         );
 
         // Split into single words.
-        return array_filter(explode(' ', $normalized));
+        return array_filter(explode(' ', (string) $normalized));
     }
 
     /**

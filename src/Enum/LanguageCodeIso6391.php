@@ -198,371 +198,371 @@ use Epubli\Common\Basic\Enum;
 class LanguageCodeIso6391 extends Enum
 {
     /** Abkhaz */
-    const ABKHAZ = 'ab';
+    public const ABKHAZ = 'ab';
     /** Afar */
-    const AFAR = 'aa';
+    public const AFAR = 'aa';
     /** Afrikaans */
-    const AFRIKAANS = 'af';
+    public const AFRIKAANS = 'af';
     /** Akan */
-    const AKAN = 'ak';
+    public const AKAN = 'ak';
     /** Albanian */
-    const ALBANIAN = 'sq';
+    public const ALBANIAN = 'sq';
     /** Amharic */
-    const AMHARIC = 'am';
+    public const AMHARIC = 'am';
     /** Arabic */
-    const ARABIC = 'ar';
+    public const ARABIC = 'ar';
     /** Aragonese */
-    const ARAGONESE = 'an';
+    public const ARAGONESE = 'an';
     /** Armenian */
-    const ARMENIAN = 'hy';
+    public const ARMENIAN = 'hy';
     /** Assamese */
-    const ASSAMESE = 'as';
+    public const ASSAMESE = 'as';
     /** Avaric */
-    const AVARIC = 'av';
+    public const AVARIC = 'av';
     /** Avestan */
-    const AVESTAN = 'ae';
+    public const AVESTAN = 'ae';
     /** Aymara */
-    const AYMARA = 'ay';
+    public const AYMARA = 'ay';
     /** Azerbaijani */
-    const AZERBAIJANI = 'az';
+    public const AZERBAIJANI = 'az';
     /** Bambara */
-    const BAMBARA = 'bm';
+    public const BAMBARA = 'bm';
     /** Bashkir */
-    const BASHKIR = 'ba';
+    public const BASHKIR = 'ba';
     /** Basque */
-    const BASQUE = 'eu';
+    public const BASQUE = 'eu';
     /** Belarusian */
-    const BELARUSIAN = 'be';
+    public const BELARUSIAN = 'be';
     /** Bengali, Bangla */
-    const BENGALI_BANGLA = 'bn';
+    public const BENGALI_BANGLA = 'bn';
     /** Bihari */
-    const BIHARI = 'bh';
+    public const BIHARI = 'bh';
     /** Bislama */
-    const BISLAMA = 'bi';
+    public const BISLAMA = 'bi';
     /** Bosnian */
-    const BOSNIAN = 'bs';
+    public const BOSNIAN = 'bs';
     /** Breton */
-    const BRETON = 'br';
+    public const BRETON = 'br';
     /** Bulgarian */
-    const BULGARIAN = 'bg';
+    public const BULGARIAN = 'bg';
     /** Burmese */
-    const BURMESE = 'my';
+    public const BURMESE = 'my';
     /** Catalan */
-    const CATALAN = 'ca';
+    public const CATALAN = 'ca';
     /** Chamorro */
-    const CHAMORRO = 'ch';
+    public const CHAMORRO = 'ch';
     /** Chechen */
-    const CHECHEN = 'ce';
+    public const CHECHEN = 'ce';
     /** Chichewa, Chewa, Nyanja */
-    const CHICHEWA_CHEWA_NYANJA = 'ny';
+    public const CHICHEWA_CHEWA_NYANJA = 'ny';
     /** Chinese */
-    const CHINESE = 'zh';
+    public const CHINESE = 'zh';
     /** Chuvash */
-    const CHUVASH = 'cv';
+    public const CHUVASH = 'cv';
     /** Cornish */
-    const CORNISH = 'kw';
+    public const CORNISH = 'kw';
     /** Corsican */
-    const CORSICAN = 'co';
+    public const CORSICAN = 'co';
     /** Cree */
-    const CREE = 'cr';
+    public const CREE = 'cr';
     /** Croatian */
-    const CROATIAN = 'hr';
+    public const CROATIAN = 'hr';
     /** Czech */
-    const CZECH = 'cs';
+    public const CZECH = 'cs';
     /** Danish */
-    const DANISH = 'da';
+    public const DANISH = 'da';
     /** Divehi, Dhivehi, Maldivian */
-    const DIVEHI_DHIVEHI_MALDIVIAN = 'dv';
+    public const DIVEHI_DHIVEHI_MALDIVIAN = 'dv';
     /** Dutch */
-    const DUTCH = 'nl';
+    public const DUTCH = 'nl';
     /** Dzongkha */
-    const DZONGKHA = 'dz';
+    public const DZONGKHA = 'dz';
     /** English */
-    const ENGLISH = 'en';
+    public const ENGLISH = 'en';
     /** Esperanto */
-    const ESPERANTO = 'eo';
+    public const ESPERANTO = 'eo';
     /** Estonian */
-    const ESTONIAN = 'et';
+    public const ESTONIAN = 'et';
     /** Ewe */
-    const EWE = 'ee';
+    public const EWE = 'ee';
     /** Faroese */
-    const FAROESE = 'fo';
+    public const FAROESE = 'fo';
     /** Fijian */
-    const FIJIAN = 'fj';
+    public const FIJIAN = 'fj';
     /** Finnish */
-    const FINNISH = 'fi';
+    public const FINNISH = 'fi';
     /** French */
-    const FRENCH = 'fr';
+    public const FRENCH = 'fr';
     /** Fula, Fulah, Pulaar, Pular */
-    const FULA_FULAH_PULAAR_PULAR = 'ff';
+    public const FULA_FULAH_PULAAR_PULAR = 'ff';
     /** Galician */
-    const GALICIAN = 'gl';
+    public const GALICIAN = 'gl';
     /** Georgian */
-    const GEORGIAN = 'ka';
+    public const GEORGIAN = 'ka';
     /** German */
-    const GERMAN = 'de';
+    public const GERMAN = 'de';
     /** Greek (modern) */
-    const GREEK_MODERN = 'el';
+    public const GREEK_MODERN = 'el';
     /** Guaraní */
-    const GUARANÍ = 'gn';
+    public const GUARANÍ = 'gn';
     /** Gujarati */
-    const GUJARATI = 'gu';
+    public const GUJARATI = 'gu';
     /** Haitian, Haitian Creole */
-    const HAITIAN_HAITIAN_CREOLE = 'ht';
+    public const HAITIAN_HAITIAN_CREOLE = 'ht';
     /** Hausa */
-    const HAUSA = 'ha';
+    public const HAUSA = 'ha';
     /** Hebrew (modern) */
-    const HEBREW_MODERN = 'he';
+    public const HEBREW_MODERN = 'he';
     /** Herero */
-    const HERERO = 'hz';
+    public const HERERO = 'hz';
     /** Hindi */
-    const HINDI = 'hi';
+    public const HINDI = 'hi';
     /** Hiri Motu */
-    const HIRI_MOTU = 'ho';
+    public const HIRI_MOTU = 'ho';
     /** Hungarian */
-    const HUNGARIAN = 'hu';
+    public const HUNGARIAN = 'hu';
     /** Interlingua */
-    const INTERLINGUA = 'ia';
+    public const INTERLINGUA = 'ia';
     /** Indonesian */
-    const INDONESIAN = 'id';
+    public const INDONESIAN = 'id';
     /** Interlingue */
-    const INTERLINGUE = 'ie';
+    public const INTERLINGUE = 'ie';
     /** Irish */
-    const IRISH = 'ga';
+    public const IRISH = 'ga';
     /** Igbo */
-    const IGBO = 'ig';
+    public const IGBO = 'ig';
     /** Inupiaq */
-    const INUPIAQ = 'ik';
+    public const INUPIAQ = 'ik';
     /** Ido */
-    const IDO = 'io';
+    public const IDO = 'io';
     /** Icelandic */
-    const ICELANDIC = 'is';
+    public const ICELANDIC = 'is';
     /** Italian */
-    const ITALIAN = 'it';
+    public const ITALIAN = 'it';
     /** Inuktitut */
-    const INUKTITUT = 'iu';
+    public const INUKTITUT = 'iu';
     /** Japanese */
-    const JAPANESE = 'ja';
+    public const JAPANESE = 'ja';
     /** Javanese */
-    const JAVANESE = 'jv';
+    public const JAVANESE = 'jv';
     /** Kalaallisut, Greenlandic */
-    const KALAALLISUT_GREENLANDIC = 'kl';
+    public const KALAALLISUT_GREENLANDIC = 'kl';
     /** Kannada */
-    const KANNADA = 'kn';
+    public const KANNADA = 'kn';
     /** Kanuri */
-    const KANURI = 'kr';
+    public const KANURI = 'kr';
     /** Kashmiri */
-    const KASHMIRI = 'ks';
+    public const KASHMIRI = 'ks';
     /** Kazakh */
-    const KAZAKH = 'kk';
+    public const KAZAKH = 'kk';
     /** Khmer */
-    const KHMER = 'km';
+    public const KHMER = 'km';
     /** Kikuyu, Gikuyu */
-    const KIKUYU_GIKUYU = 'ki';
+    public const KIKUYU_GIKUYU = 'ki';
     /** Kinyarwanda */
-    const KINYARWANDA = 'rw';
+    public const KINYARWANDA = 'rw';
     /** Kyrgyz */
-    const KYRGYZ = 'ky';
+    public const KYRGYZ = 'ky';
     /** Komi */
-    const KOMI = 'kv';
+    public const KOMI = 'kv';
     /** Kongo */
-    const KONGO = 'kg';
+    public const KONGO = 'kg';
     /** Korean */
-    const KOREAN = 'ko';
+    public const KOREAN = 'ko';
     /** Kurdish */
-    const KURDISH = 'ku';
+    public const KURDISH = 'ku';
     /** Kwanyama, Kuanyama */
-    const KWANYAMA_KUANYAMA = 'kj';
+    public const KWANYAMA_KUANYAMA = 'kj';
     /** Latin */
-    const LATIN = 'la';
+    public const LATIN = 'la';
     /** Luxembourgish, Letzeburgesch */
-    const LUXEMBOURGISH_LETZEBURGESCH = 'lb';
+    public const LUXEMBOURGISH_LETZEBURGESCH = 'lb';
     /** Ganda */
-    const GANDA = 'lg';
+    public const GANDA = 'lg';
     /** Limburgish, Limburgan, Limburger */
-    const LIMBURGISH_LIMBURGAN_LIMBURGER = 'li';
+    public const LIMBURGISH_LIMBURGAN_LIMBURGER = 'li';
     /** Lingala */
-    const LINGALA = 'ln';
+    public const LINGALA = 'ln';
     /** Lao */
-    const LAO = 'lo';
+    public const LAO = 'lo';
     /** Lithuanian */
-    const LITHUANIAN = 'lt';
+    public const LITHUANIAN = 'lt';
     /** Luba-Katanga */
-    const LUBA_KATANGA = 'lu';
+    public const LUBA_KATANGA = 'lu';
     /** Latvian */
-    const LATVIAN = 'lv';
+    public const LATVIAN = 'lv';
     /** Manx */
-    const MANX = 'gv';
+    public const MANX = 'gv';
     /** Macedonian */
-    const MACEDONIAN = 'mk';
+    public const MACEDONIAN = 'mk';
     /** Malagasy */
-    const MALAGASY = 'mg';
+    public const MALAGASY = 'mg';
     /** Malay */
-    const MALAY = 'ms';
+    public const MALAY = 'ms';
     /** Malayalam */
-    const MALAYALAM = 'ml';
+    public const MALAYALAM = 'ml';
     /** Maltese */
-    const MALTESE = 'mt';
+    public const MALTESE = 'mt';
     /** Māori */
-    const MĀORI = 'mi';
+    public const MĀORI = 'mi';
     /** Marathi (Marāṭhī) */
-    const MARATHI_MARĀṬHĪ = 'mr';
+    public const MARATHI_MARĀṬHĪ = 'mr';
     /** Marshallese */
-    const MARSHALLESE = 'mh';
+    public const MARSHALLESE = 'mh';
     /** Mongolian */
-    const MONGOLIAN = 'mn';
+    public const MONGOLIAN = 'mn';
     /** Nauru */
-    const NAURU = 'na';
+    public const NAURU = 'na';
     /** Navajo, Navaho */
-    const NAVAJO_NAVAHO = 'nv';
+    public const NAVAJO_NAVAHO = 'nv';
     /** Northern Ndebele */
-    const NORTHERN_NDEBELE = 'nd';
+    public const NORTHERN_NDEBELE = 'nd';
     /** Nepali */
-    const NEPALI = 'ne';
+    public const NEPALI = 'ne';
     /** Ndonga */
-    const NDONGA = 'ng';
+    public const NDONGA = 'ng';
     /** Norwegian Bokmål */
-    const NORWEGIAN_BOKMÅL = 'nb';
+    public const NORWEGIAN_BOKMÅL = 'nb';
     /** Norwegian Nynorsk */
-    const NORWEGIAN_NYNORSK = 'nn';
+    public const NORWEGIAN_NYNORSK = 'nn';
     /** Norwegian */
-    const NORWEGIAN = 'no';
+    public const NORWEGIAN = 'no';
     /** Nuosu */
-    const NUOSU = 'ii';
+    public const NUOSU = 'ii';
     /** Southern Ndebele */
-    const SOUTHERN_NDEBELE = 'nr';
+    public const SOUTHERN_NDEBELE = 'nr';
     /** Occitan */
-    const OCCITAN = 'oc';
+    public const OCCITAN = 'oc';
     /** Ojibwe, Ojibwa */
-    const OJIBWE_OJIBWA = 'oj';
+    public const OJIBWE_OJIBWA = 'oj';
     /** Old Church Slavonic, Church Slavonic, Old Bulgarian */
-    const OLD_CHURCH_SLAVONIC_CHURCH_SLAVONIC_OLD_BULGARIAN = 'cu';
+    public const OLD_CHURCH_SLAVONIC_CHURCH_SLAVONIC_OLD_BULGARIAN = 'cu';
     /** Oromo */
-    const OROMO = 'om';
+    public const OROMO = 'om';
     /** Oriya */
-    const ORIYA = 'or';
+    public const ORIYA = 'or';
     /** Ossetian, Ossetic */
-    const OSSETIAN_OSSETIC = 'os';
+    public const OSSETIAN_OSSETIC = 'os';
     /** Panjabi, Punjabi */
-    const PANJABI_PUNJABI = 'pa';
+    public const PANJABI_PUNJABI = 'pa';
     /** Pāli */
-    const PĀLI = 'pi';
+    public const PĀLI = 'pi';
     /** Persian (Farsi) */
-    const PERSIAN_FARSI = 'fa';
+    public const PERSIAN_FARSI = 'fa';
     /** Polish */
-    const POLISH = 'pl';
+    public const POLISH = 'pl';
     /** Pashto, Pushto */
-    const PASHTO_PUSHTO = 'ps';
+    public const PASHTO_PUSHTO = 'ps';
     /** Portuguese */
-    const PORTUGUESE = 'pt';
+    public const PORTUGUESE = 'pt';
     /** Quechua */
-    const QUECHUA = 'qu';
+    public const QUECHUA = 'qu';
     /** Romansh */
-    const ROMANSH = 'rm';
+    public const ROMANSH = 'rm';
     /** Kirundi */
-    const KIRUNDI = 'rn';
+    public const KIRUNDI = 'rn';
     /** Romanian */
-    const ROMANIAN = 'ro';
+    public const ROMANIAN = 'ro';
     /** Russian */
-    const RUSSIAN = 'ru';
+    public const RUSSIAN = 'ru';
     /** Sanskrit (Saṁskṛta) */
-    const SANSKRIT_SAṀSKṚTA = 'sa';
+    public const SANSKRIT_SAṀSKṚTA = 'sa';
     /** Sardinian */
-    const SARDINIAN = 'sc';
+    public const SARDINIAN = 'sc';
     /** Sindhi */
-    const SINDHI = 'sd';
+    public const SINDHI = 'sd';
     /** Northern Sami */
-    const NORTHERN_SAMI = 'se';
+    public const NORTHERN_SAMI = 'se';
     /** Samoan */
-    const SAMOAN = 'sm';
+    public const SAMOAN = 'sm';
     /** Sango */
-    const SANGO = 'sg';
+    public const SANGO = 'sg';
     /** Serbian */
-    const SERBIAN = 'sr';
+    public const SERBIAN = 'sr';
     /** Scottish Gaelic, Gaelic */
-    const SCOTTISH_GAELIC_GAELIC = 'gd';
+    public const SCOTTISH_GAELIC_GAELIC = 'gd';
     /** Shona */
-    const SHONA = 'sn';
+    public const SHONA = 'sn';
     /** Sinhala, Sinhalese */
-    const SINHALA_SINHALESE = 'si';
+    public const SINHALA_SINHALESE = 'si';
     /** Slovak */
-    const SLOVAK = 'sk';
+    public const SLOVAK = 'sk';
     /** Slovene */
-    const SLOVENE = 'sl';
+    public const SLOVENE = 'sl';
     /** Somali */
-    const SOMALI = 'so';
+    public const SOMALI = 'so';
     /** Southern Sotho */
-    const SOUTHERN_SOTHO = 'st';
+    public const SOUTHERN_SOTHO = 'st';
     /** Spanish */
-    const SPANISH = 'es';
+    public const SPANISH = 'es';
     /** Sundanese */
-    const SUNDANESE = 'su';
+    public const SUNDANESE = 'su';
     /** Swahili */
-    const SWAHILI = 'sw';
+    public const SWAHILI = 'sw';
     /** Swati */
-    const SWATI = 'ss';
+    public const SWATI = 'ss';
     /** Swedish */
-    const SWEDISH = 'sv';
+    public const SWEDISH = 'sv';
     /** Tamil */
-    const TAMIL = 'ta';
+    public const TAMIL = 'ta';
     /** Telugu */
-    const TELUGU = 'te';
+    public const TELUGU = 'te';
     /** Tajik */
-    const TAJIK = 'tg';
+    public const TAJIK = 'tg';
     /** Thai */
-    const THAI = 'th';
+    public const THAI = 'th';
     /** Tigrinya */
-    const TIGRINYA = 'ti';
+    public const TIGRINYA = 'ti';
     /** Tibetan Standard, Tibetan, Central */
-    const TIBETAN_STANDARD_TIBETAN_CENTRAL = 'bo';
+    public const TIBETAN_STANDARD_TIBETAN_CENTRAL = 'bo';
     /** Turkmen */
-    const TURKMEN = 'tk';
+    public const TURKMEN = 'tk';
     /** Tagalog */
-    const TAGALOG = 'tl';
+    public const TAGALOG = 'tl';
     /** Tswana */
-    const TSWANA = 'tn';
+    public const TSWANA = 'tn';
     /** Tonga (Tonga Islands) */
-    const TONGA_TONGA_ISLANDS = 'to';
+    public const TONGA_TONGA_ISLANDS = 'to';
     /** Turkish */
-    const TURKISH = 'tr';
+    public const TURKISH = 'tr';
     /** Tsonga */
-    const TSONGA = 'ts';
+    public const TSONGA = 'ts';
     /** Tatar */
-    const TATAR = 'tt';
+    public const TATAR = 'tt';
     /** Twi */
-    const TWI = 'tw';
+    public const TWI = 'tw';
     /** Tahitian */
-    const TAHITIAN = 'ty';
+    public const TAHITIAN = 'ty';
     /** Uyghur */
-    const UYGHUR = 'ug';
+    public const UYGHUR = 'ug';
     /** Ukrainian */
-    const UKRAINIAN = 'uk';
+    public const UKRAINIAN = 'uk';
     /** Urdu */
-    const URDU = 'ur';
+    public const URDU = 'ur';
     /** Uzbek */
-    const UZBEK = 'uz';
+    public const UZBEK = 'uz';
     /** Venda */
-    const VENDA = 've';
+    public const VENDA = 've';
     /** Vietnamese */
-    const VIETNAMESE = 'vi';
+    public const VIETNAMESE = 'vi';
     /** Volapük */
-    const VOLAPÜK = 'vo';
+    public const VOLAPÜK = 'vo';
     /** Walloon */
-    const WALLOON = 'wa';
+    public const WALLOON = 'wa';
     /** Welsh */
-    const WELSH = 'cy';
+    public const WELSH = 'cy';
     /** Wolof */
-    const WOLOF = 'wo';
+    public const WOLOF = 'wo';
     /** Western Frisian */
-    const WESTERN_FRISIAN = 'fy';
+    public const WESTERN_FRISIAN = 'fy';
     /** Xhosa */
-    const XHOSA = 'xh';
+    public const XHOSA = 'xh';
     /** Yiddish */
-    const YIDDISH = 'yi';
+    public const YIDDISH = 'yi';
     /** Yoruba */
-    const YORUBA = 'yo';
+    public const YORUBA = 'yo';
     /** Zhuang, Chuang */
-    const ZHUANG_CHUANG = 'za';
+    public const ZHUANG_CHUANG = 'za';
     /** Zulu */
-    const ZULU = 'zu';
+    public const ZULU = 'zu';
 }

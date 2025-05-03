@@ -1,4 +1,5 @@
 <?php
+
 namespace Epubli\Common\Tools;
 
 use Doctrine\ORM\QueryBuilder;
@@ -20,7 +21,7 @@ class QueryTools
     {
         $sortParameter = trim($sortParameter);
         $sortDirection = 'ASC';
-        if (substr($sortParameter, 0, 1) === '-') {
+        if (str_starts_with($sortParameter, '-')) {
             $sortParameter = substr($sortParameter, 1);
             $sortDirection = 'DESC';
         }
@@ -45,7 +46,7 @@ class QueryTools
             }
             $match = array_search($sortParameter, $allowed);
             foreach ($tableAliases as $a) {
-                $match = $match ? $match : array_search($a . "." . $sortParameter, $allowed);
+                $match = $match ?: array_search($a . "." . $sortParameter, $allowed);
             }
 
             if ($match) {
@@ -70,6 +71,6 @@ class QueryTools
             }
         }
 
-        return $sortParameter ? $sortParameter : null;
+        return $sortParameter ?: null;
     }
 }

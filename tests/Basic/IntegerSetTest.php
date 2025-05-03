@@ -75,9 +75,10 @@ class IntegerSetTest extends TestCase
                 50, 51, 52, 53, 54, 55, 56, 57, 58, 59,
                 60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
                 70, 71, 72, 73, 74, 75, 76, 77, 78, 79,
-                80, 81
+                80, 81,
             ],
-            $set->getItems());
+            $set->getItems()
+        );
     }
 
     public function testStringWithLeadingComma()
@@ -112,13 +113,10 @@ class IntegerSetTest extends TestCase
         $this->assertEquals([1, 2, 4], $set->getItems());
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage No negative values allowed!
-     * @throws \Exception
-     */
     public function testInsertNegative()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('No negative values allowed!');
         $set = new IntegerSet();
         $set->insert(-2);
     }
@@ -131,24 +129,18 @@ class IntegerSetTest extends TestCase
         $this->assertEquals([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], $set->getItems());
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage No negative values allowed!
-     * @throws \Exception
-     */
     public function testInsertRangeNegativeFrom()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('No negative values allowed!');
         $set = new IntegerSet();
         $set->insertRange(-2, 10);
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage No negative values allowed!
-     * @throws \Exception
-     */
     public function testInsertRangeNegativeTo()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('No negative values allowed!');
         $set = new IntegerSet();
         $set->insertRange(2, -10);
     }

@@ -9,14 +9,8 @@ In your [composer](https://getcomposer.org/).json include the following:
 ```
 #!json
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/epubli/common.git"
-        }
-    ]
     "require": {
-        "epubli/common": "dev-master"
+        "mikespub/epubli-common": "^1.0"
     }
 }
 ```

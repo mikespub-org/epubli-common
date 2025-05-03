@@ -7,12 +7,12 @@ namespace Epubli\Common\Tools;
  */
 class ArrayTools
 {
-    const SORT_ASC = 0;
-    const SORT_DEFAULT = 0;
-    const SORT_DESC = 1;
-    const SORT_NOCASE = 2;
-    const SORT_TRIM = 4;
-    const SORT_NATURAL = 8;
+    public const SORT_ASC = 0;
+    public const SORT_DEFAULT = 0;
+    public const SORT_DESC = 1;
+    public const SORT_NOCASE = 2;
+    public const SORT_TRIM = 4;
+    public const SORT_NATURAL = 8;
 
     public static $sortKey;
     public static $sortOptions;
@@ -21,7 +21,7 @@ class ArrayTools
     {
         $merged = $array1;
         foreach ($array2 as $key => &$value) {
-            if (is_array($value) && isset ($merged [$key]) && is_array($merged [$key])) {
+            if (is_array($value) && isset($merged [$key]) && is_array($merged [$key])) {
                 $merged [$key] = self::distinctMerge($merged [$key], $value);
             } else {
                 $merged [$key] = $value;
@@ -67,7 +67,7 @@ class ArrayTools
      */
     public static function groupByKeys($arr, $groupKeys, $deep = true)
     {
-        $out = Array();
+        $out = [];
         if (is_array($groupKeys)) {
             foreach ($arr as $k => $v) {
                 $grp = array_reverse($groupKeys);
@@ -177,9 +177,9 @@ class ArrayTools
      */
     public static function regExpMatches(array $array, $regExpPattern)
     {
-        $results = Array();
+        $results = [];
         foreach ($array as $entry) {
-            preg_match($regExpPattern, $entry, $m);
+            preg_match($regExpPattern, (string) $entry, $m);
             if (array_key_exists(0, $m)) {
                 $results[] = $m;
             }
@@ -198,14 +198,14 @@ class ArrayTools
     public static function matchText($needle, array $haystack, $amount = 1, $threshold = 50)
     {
         $best = 0;
-        $matches = array();
+        $matches = [];
 
         /*  replace underscores, dashes, tabs and linefeeds with whitechars, remove consequent whitechars */
-        $needle = strtolower(trim(preg_replace('/[ \-\t\n\r]+/', ' ', $needle)));
+        $needle = strtolower(trim((string) preg_replace('/[ \-\t\n\r]+/', ' ', (string) $needle)));
 
         foreach ($haystack as $key => $value) {
             // match value with target
-            similar_text($needle, strtolower(trim(preg_replace('/[ \-\t\n\r]+/', ' ', $value))), $percent);
+            similar_text($needle, strtolower(trim((string) preg_replace('/[ \-\t\n\r]+/', ' ', (string) $value))), $percent);
 
             // only consider value, if result is better than actual best result and above threshold
             if ($percent >= $best && $percent >= $threshold) {
@@ -216,11 +216,11 @@ class ArrayTools
                 // push match on top of matches-array
                 array_unshift(
                     $matches,
-                    Array(
+                    [
                         "key" => $key,
                         "value" => $value,
-                        "result" => round($percent, 2)
-                    )
+                        "result" => round($percent, 2),
+                    ]
                 );
             }
         }
@@ -289,7 +289,7 @@ class ArrayTools
                 foreach ($values as $value) {
                     foreach ($array as $v) {
                         if (isset($v[$key])) {
-                            $grouped[$v[$key]][$value] = isset($v[$value]) ? $v[$value] : null;
+                            $grouped[$v[$key]][$value] = $v[$value] ?? null;
                         }
                     }
                 }
@@ -299,7 +299,7 @@ class ArrayTools
                 /* if $values contains a string, return an array with the specified key - values */
                 foreach ($array as $v) {
                     if (isset($v[$key])) {
-                        $grouped[$v[$key]] = isset($v[$values]) ? $v[$values] : null;
+                        $grouped[$v[$key]] = $v[$values] ?? null;
                     }
                 }
 
@@ -362,7 +362,7 @@ class ArrayTools
                 $fields = [$row, $fields];
             }
             foreach ($fields as $value) {
-                if ($value instanceof \DateTime || $value instanceOf \Date) {
+                if ($value instanceof \DateTime || $value instanceof \Date) {
                     $csvOutput .= $value->format('Y-m-d H:i:s');
                 } elseif (is_numeric($value)) {
                     $csvOutput .= $value . $delimiter;
@@ -393,8 +393,7 @@ class ArrayTools
         $indentationLimit = null,
         $textLengthLimit = null,
         $ellipsis = '[...]'
-    )
-    {
+    ) {
         $textOut = '';
         $temp = function ($data, $indent = 0) use (
             $textOut,
@@ -425,9 +424,14 @@ class ArrayTools
                         $value = $value->format('Y-m-d H:i:s');
                     }
                     if (isset($textLengthLimit) && (strlen($value) > $textLengthLimit)) {
-                        $value = substr($value, 0,
-                                $textLengthLimitStart) . $ellipsis . ($textLengthLimitEnd > 0 ? substr($value,
-                                -$textLengthLimitEnd) : '');
+                        $value = substr(
+                            $value,
+                            0,
+                            $textLengthLimitStart
+                        ) . $ellipsis . ($textLengthLimitEnd > 0 ? substr(
+                            $value,
+                            -$textLengthLimitEnd
+                        ) : '');
                     }
                     $textOut .= "$key : $value" . $terminator;
                 }

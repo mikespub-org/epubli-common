@@ -7,6 +7,4 @@ namespace Epubli\Common\Basic;
  *
  * @author Simon Schrape <s.schrape@epubli.com>
  */
-class Enum extends \MyCLabs\Enum\Enum
-{
-}
+class Enum extends \MyCLabs\Enum\Enum {}
